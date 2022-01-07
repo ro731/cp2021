@@ -128,7 +128,7 @@ img.add_border {
                             <li><a href="./../blog/index.html">blog</a></li>
                         </ul>
                       </li>
-                     <li class='has-children'><a href='About.html'>About</a><ul class='dropdown'><li><a href='GitExtensions.html'>GitExtensions</a><li><a href='run.html'>run</a><li><a href='runsrc.html'>runsrc</a><li><a href='Hybrid.html'>Hybrid</a><li><a href='W13-1.html'>W13-1</a></li></ul><li><a href='HW1.html'>HW1</a><li><a href='HW2.html'>HW2</a><li class='has-children'><a href='W10.html'>W10</a><ul class='dropdown'><li><a href='Examples.html'>Examples</a></li></ul><li class='has-children'><a href='Exam.html'>Exam</a><ul class='dropdown'><li><a href='W13-2.html'>W13-2</a></li></ul><li><a href='HW3.html'>HW3</a><li class='has-children'><a href='BSnake.html'>BSnake</a><ul class='dropdown'><li><a href='snake run.html'>snake run</a></li></ul><li><a href='Final.html'>Final</a><li class='has-children'><a href='Final Project.html'>Final Project</a><ul class='dropdown'><li><a href='41023103.html'>41023103</a></li>
+                     <li class='has-children'><a href='About.html'>About</a><ul class='dropdown'><li><a href='GitExtensions.html'>GitExtensions</a><li><a href='run.html'>run</a><li><a href='runsrc.html'>runsrc</a><li><a href='Hybrid.html'>Hybrid</a></li></ul><li><a href='HW1.html'>HW1</a><li><a href='HW2.html'>HW2</a><li class='has-children'><a href='W10.html'>W10</a><ul class='dropdown'><li><a href='Examples.html'>Examples</a></li></ul><li class='has-children'><a href='Exam.html'>Exam</a><ul class='dropdown'><li><a href='W13.html'>W13</a></li></ul><li><a href='HW3.html'>HW3</a><li class='has-children'><a href='BSnake.html'>BSnake</a><ul class='dropdown'><li><a href='snake run.html'>snake run</a></li></ul><li><a href='Final.html'>Final</a><li class='has-children'><a href='Final Project.html'>Final Project</a><ul class='dropdown'><li><a href='41023103.html'>41023103</a></li>
                       </ul>
                 </nav>
               </div>
@@ -139,7 +139,7 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">runsrc << <a href='runsrc.html'>Previous</a> <a href='W13-1.html'>Next</a> >> W13-1<br /><h1>Hybrid</h1>
+    <div id="tipue_search_content">runsrc << <a href='runsrc.html'>Previous</a> <a href='HW1.html'>Next</a> >> HW1<br /><h1>Hybrid</h1>
 <p>將 start_ipv4.bat 與部分檔案放在 USB 隨身碟, 使用 C 槽的 Python395 與 Portablegit:</p>
 <p>start_ipv4.bat, data, tmp, wscite 與 home_ipv4, home_ipv6 放在隨身碟:</p>
 <pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">@echo off
@@ -271,7 +271,94 @@ W13 = button2(W13_url)
 doc["W13"].bind('click', W13.do)
 ################################## W13 end
 </script>
-</p><br />runsrc << <a href='runsrc.html'>Previous</a> <a href='W13-1.html'>Next</a> >> W13-1</div>
+</p>
+<p><!-- ######################  editor1 結束 ###################### --></p>
+<!-- 以下可以開始利用 editor1 的設定編寫對應 Brython 程式 -->
+<p>
+<script type="text/python3">
+from browser import document as doc
+import ace
+
+# 清除畫布
+def clear_bd1(ev):
+    # 注意這裡清除的畫布 id 為 brython_div
+    bd = doc["brython_div"]
+    bd.clear()
+Ace1 = ace.Editor(editor_id="kw_editor1", console_id="kw_console1", container_id="kw__container1", storage_id="kw_py_src1" )
+# 從 gist 取出程式碼後, 放入 editor 作為 default 程式
+def run1():
+    # 利用 get 取下 src 變數值
+    try:
+        url = doc.query["src"]
+    except:
+        url = "https://gist.githubusercontent.com/mdecourse/0229a8a017091476a79700b8a190f185/raw/c3a6deaf717f8f2739a4b1392a5ab10936e9693a/from_1_add_to_10_1.py"
+    prog = open(url).read()
+
+    # 將程式載入編輯區
+    Ace1.editor.setValue(prog)
+    Ace1.editor.scrollToRow(0)
+    Ace1.editor.gotoLine(0)
+    # 直接執行程式
+    #ns = {'__name__':'__main__'}
+    #exec(prog, ns)
+    # 按下 run 按鈕
+    Ace1.run()
+
+# 執行程式, 顯示輸出結果與清除輸出結果及對應按鈕綁定
+doc['kw_run1'].bind('click', Ace1.run)
+doc['kw_show_console1'].bind('click', Ace1.show_console)
+doc['kw_clear_console1'].bind('click', Ace1.clear_console)
+doc['clear_bd1'].bind('click', clear_bd1)
+# 呼叫函式執行
+run1()
+</script>
+</p>
+<!-- 以上為內建程式, 頁面可透過 ?src=gist_url 執行 -->
+<p><!-- add 1 to 100 開始 -->
+<script type="text/python3">
+from browser import document as doc
+import ace
+
+# 清除畫布
+def clear_bd1(ev):
+    bd = doc["brython_div1"]
+    bd.clear()
+
+# 利用 ace 中的 Editor 建立 Ace 物件, 其中的輸入變數分別對應到頁面中的編輯區物件
+Ace2 = ace.Editor(editor_id="kw_editor1", console_id="kw_console1", container_id="kw__container1", storage_id="kw_py_src1" )
+
+class button2:
+    def __init__(self, url):
+        self.url = url
+
+    # 記得加入 event 輸入變數
+    def do(self,ev):
+        Ace2.editor.setValue(open(self.url).read())
+        Ace2.editor.scrollToRow(0)
+        Ace2.editor.gotoLine(0)
+        Ace2.run()
+
+add1to100_url = "https://gist.githubusercontent.com/mdecourse/0229a8a017091476a79700b8a190f185/raw/c48e37714f055c3a0027cbfef59e442a6ef659b9/from_1_add_to_100_1.py"
+add1to100 = button2(add1to100_url)
+doc["add1to100"].bind('click', add1to100.do)
+################################# p261 start 
+p261_url = "https://gist.githubusercontent.com/mdecourse/2f56974a40da7a218dbaef376a5b4ca4/raw/980606effcd29635307d6474718cd4a7ef016747/p261.py"
+p261 = button2(p261_url)
+doc["p261"].bind('click', p261.do)
+################################## p261 end
+################################## rocflag start
+rocflag_url = "https://gist.githubusercontent.com/mdecourse/2f56974a40da7a218dbaef376a5b4ca4/raw/0e2ca81d5c2539c4b6c86071c8cf9de0b1251b9c/roc_flag.py"
+rocflag = button2(rocflag_url)
+doc["rocflag"].bind("click", rocflag.do)
+################################## rocflag end
+################################# W13 start 
+W13_url = "https://gist.githubusercontent.com/ro731/3cf0d816720fc5ff5b3e198a296706e4/raw/1a4c1854571d20ee9bd76a7988c2aec97f78710d/gistfile2.txt"
+W13 = button2(W13_url)
+doc["W13"].bind('click', W13.do)
+################################## W13 end
+</script>
+</p>
+<br />runsrc << <a href='runsrc.html'>Previous</a> <a href='HW1.html'>Next</a> >> HW1</div>
         
     <!-- footer -->
       <div class="container">
