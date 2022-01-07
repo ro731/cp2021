@@ -128,7 +128,7 @@ img.add_border {
                             <li><a href="./../blog/index.html">blog</a></li>
                         </ul>
                       </li>
-                     <li class='has-children'><a href='About.html'>About</a><ul class='dropdown'><li><a href='GitExtensions.html'>GitExtensions</a><li><a href='run.html'>run</a><li><a href='runsrc.html'>runsrc</a><li><a href='Hybrid.html'>Hybrid</a></li></ul><li class='has-children'><a href='Exam.html'>Exam</a><ul class='dropdown'><li><a href='W13.html'>W13</a></li></ul><li><a href='HW1.html'>HW1</a><li><a href='HW2.html'>HW2</a><li class='has-children'><a href='W10.html'>W10</a><ul class='dropdown'><li><a href='Examples.html'>Examples</a></li></ul><li><a href='HW3.html'>HW3</a><li class='has-children'><a href='BSnake.html'>BSnake</a><ul class='dropdown'><li><a href='snake run.html'>snake run</a></li></ul><li><a href='Final.html'>Final</a><li class='has-children'><a href='Final Project.html'>Final Project</a><ul class='dropdown'><li><a href='41023103.html'>41023103</a></li>
+                     <li class='has-children'><a href='About.html'>About</a><ul class='dropdown'><li><a href='GitExtensions.html'>GitExtensions</a><li><a href='run.html'>run</a><li><a href='runsrc.html'>runsrc</a><li><a href='Hybrid.html'>Hybrid</a><li><a href='W13-1.html'>W13-1</a></li></ul><li><a href='HW1.html'>HW1</a><li><a href='HW2.html'>HW2</a><li class='has-children'><a href='W10.html'>W10</a><ul class='dropdown'><li><a href='Examples.html'>Examples</a></li></ul><li class='has-children'><a href='Exam.html'>Exam</a><ul class='dropdown'><li><a href='W13-2.html'>W13-2</a></li></ul><li><a href='HW3.html'>HW3</a><li class='has-children'><a href='BSnake.html'>BSnake</a><ul class='dropdown'><li><a href='snake run.html'>snake run</a></li></ul><li><a href='Final.html'>Final</a><li class='has-children'><a href='Final Project.html'>Final Project</a><ul class='dropdown'><li><a href='41023103.html'>41023103</a></li>
                       </ul>
                 </nav>
               </div>
@@ -143,14 +143,18 @@ img.add_border {
 <p><span>第一題請利用 Brython 在個人期末報告頁面中新增一個按鈕, 標題為 final1, 點擊後可以執行個人 gist 中的程式, 並且在頁面下方的 x 與 y 方向, 畫出 15 x 15 條方格線, 且線寬 1 pixel, 每一方格長寬分別為 50 Pixels. </span></p>
 <p><span>第二題為延伸第一個題目, 額外新增另一個按鈕, 標題為 final2, 請在上述方格中, 加入一個大小為 45 x 45 pixels 的綠色方塊, 可以沿著格線區最外圍, 從 (1, 1) 方格座標區開始, 重複進行 U 字形運動, 即該方塊由上往下運動至最下方後, 右轉至最右方後, 往上移動至上方後反轉, 並且重複進行相同運動.</span></p>
 <!-- 導入 brython 程式庫 -->
+<p>
 <script src="./../cmsimde/static/brython.js"></script>
 <script src="./../cmsimde/static/brython_stdlib.js"></script>
+</p>
 <!-- 啟動 Brython -->
+<p>
 <script>
 window.onload=function(){
 brython({debug:1, pythonpath:['./../cmsimde/static/','./../downloads/py/']});
 }
 </script>
+</p>
 <p><!-- 導入 FileSaver 與 filereader --></p>
 <p>
 <script src="./../cmsimde/static/ace/FileSaver.min.js" type="text/javascript"></script>
@@ -200,6 +204,7 @@ function doSave(storage_id, filename){
 <div id="brython_div"></div>
 <p><!-- ######################  editor1 結束 ###################### --></p>
 <!-- 以下可以開始利用 editor1 的設定編寫對應 Brython 程式 -->
+<p>
 <script type="text/python3">
 from browser import document as doc
 import ace
@@ -237,6 +242,7 @@ doc['clear_bd1'].bind('click', clear_bd1)
 # 呼叫函式執行
 run1()
 </script>
+</p>
 <!-- 以上為內建程式, 頁面可透過 ?src=gist_url 執行 -->
 <p><!-- add 1 to 100 開始 -->
 <script type="text/python3">

@@ -128,7 +128,7 @@ img.add_border {
                             <li><a href="./../blog/index.html">blog</a></li>
                         </ul>
                       </li>
-                     <li class='has-children'><a href='About.html'>About</a><ul class='dropdown'><li><a href='GitExtensions.html'>GitExtensions</a><li><a href='run.html'>run</a><li><a href='runsrc.html'>runsrc</a><li><a href='Hybrid.html'>Hybrid</a></li></ul><li class='has-children'><a href='Exam.html'>Exam</a><ul class='dropdown'><li><a href='W13.html'>W13</a></li></ul><li><a href='HW1.html'>HW1</a><li><a href='HW2.html'>HW2</a><li class='has-children'><a href='W10.html'>W10</a><ul class='dropdown'><li><a href='Examples.html'>Examples</a></li></ul><li><a href='HW3.html'>HW3</a><li class='has-children'><a href='BSnake.html'>BSnake</a><ul class='dropdown'><li><a href='snake run.html'>snake run</a></li></ul><li><a href='Final.html'>Final</a><li class='has-children'><a href='Final Project.html'>Final Project</a><ul class='dropdown'><li><a href='41023103.html'>41023103</a></li>
+                     <li class='has-children'><a href='About.html'>About</a><ul class='dropdown'><li><a href='GitExtensions.html'>GitExtensions</a><li><a href='run.html'>run</a><li><a href='runsrc.html'>runsrc</a><li><a href='Hybrid.html'>Hybrid</a><li><a href='W13-1.html'>W13-1</a></li></ul><li><a href='HW1.html'>HW1</a><li><a href='HW2.html'>HW2</a><li class='has-children'><a href='W10.html'>W10</a><ul class='dropdown'><li><a href='Examples.html'>Examples</a></li></ul><li class='has-children'><a href='Exam.html'>Exam</a><ul class='dropdown'><li><a href='W13-2.html'>W13-2</a></li></ul><li><a href='HW3.html'>HW3</a><li class='has-children'><a href='BSnake.html'>BSnake</a><ul class='dropdown'><li><a href='snake run.html'>snake run</a></li></ul><li><a href='Final.html'>Final</a><li class='has-children'><a href='Final Project.html'>Final Project</a><ul class='dropdown'><li><a href='41023103.html'>41023103</a></li>
                       </ul>
                 </nav>
               </div>
@@ -139,20 +139,24 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">Exam << <a href='Exam.html'>Previous</a> <a href='HW1.html'>Next</a> >> HW1<br /><h1>W13</h1>
+    <div id="tipue_search_content">Hybrid << <a href='Hybrid.html'>Previous</a> <a href='HW1.html'>Next</a> >> HW1<br /><h1>W13-1</h1>
 <p><a href="./../downloads/w12.txt">w12.txt</a></p>
 <p><a href="https://en.wikipedia.org/wiki/Flag_of_the_Republic_of_China#Construction_details">ROC 國旗規格</a>.</p>
 <p><a href="https://zh.wikipedia.org/wiki/%E4%B8%AD%E5%8D%8E%E4%BA%BA%E6%B0%91%E5%85%B1%E5%92%8C%E5%9B%BD%E5%9B%BD%E6%97%97#%E8%A7%84%E6%A0%BC">PROC 國旗規格</a> - 可以根據此規格定義, 新增 <button id="procflas">PROC flag</button> 按鈕.</p>
 <p><a href="https://en.wikipedia.org/wiki/Flag_of_the_United_States#Specifications">USA 國旗規格</a> - 可以根據此規格定義, 新增 <button id="usaflag">USA flag</button> 按鈕.</p>
 <!-- 導入 brython 程式庫 -->
+<p>
 <script src="./../cmsimde/static/brython.js"></script>
 <script src="./../cmsimde/static/brython_stdlib.js"></script>
+</p>
 <!-- 啟動 Brython -->
+<p>
 <script>
 window.onload=function(){
 brython({debug:1, pythonpath:['./../cmsimde/static/','./../downloads/py/']});
 }
 </script>
+</p>
 <p><!-- 導入 FileSaver 與 filereader --></p>
 <p>
 <script src="./../cmsimde/static/ace/FileSaver.min.js" type="text/javascript"></script>
@@ -202,6 +206,7 @@ function doSave(storage_id, filename){
 <div id="brython_div"></div>
 <p><!-- ######################  editor1 結束 ###################### --></p>
 <!-- 以下可以開始利用 editor1 的設定編寫對應 Brython 程式 -->
+<p>
 <script type="text/python3">
 from browser import document as doc
 import ace
@@ -239,6 +244,7 @@ doc['clear_bd1'].bind('click', clear_bd1)
 # 呼叫函式執行
 run1()
 </script>
+</p>
 <!-- 以上為內建程式, 頁面可透過 ?src=gist_url 執行 -->
 <p><!-- add 1 to 100 開始 -->
 <script type="text/python3">
@@ -284,7 +290,7 @@ doc["W13"].bind('click', W13.do)
 ################################## W13 end
 </script>
 </p>
-<br />Exam << <a href='Exam.html'>Previous</a> <a href='HW1.html'>Next</a> >> HW1</div>
+<br />Hybrid << <a href='Hybrid.html'>Previous</a> <a href='HW1.html'>Next</a> >> HW1</div>
         
     <!-- footer -->
       <div class="container">
